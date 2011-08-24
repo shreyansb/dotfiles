@@ -9,6 +9,10 @@ export CLICOLOR=1
 export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 
 # ---- git branch name and status for prompt ----
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+	source /usr/local/git/contrib/completion/git-completion.bash
+fi
+
 parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
