@@ -1,11 +1,27 @@
 [user]
 	name = Shreyans Bhansali
 	email = shreyans@venmo.com
+[core]
+	excludesfile = /Users/shreyans/.gitignore
+[rerere]
+	enabled = 1
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
 [alias]
-	st=status
-	ci=commit
-	co=checkout
+	br = branch
+	ci = commit -a
+	co = checkout
+	df = diff
+	dwc = diff -w -M --color-words
+	lg = log
+	ll = log -p
+	rb = rebase
+	fix = rebase -i origin/master
+	rbc = rebase --continue
+	re = remote
+	st = status
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
-	up=pull --rebase
+	up = pull --rebase
 [color]
-	ui = auto
+	ui=auto
