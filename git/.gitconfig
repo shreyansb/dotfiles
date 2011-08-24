@@ -1,0 +1,11 @@
+[user]
+	name = Shreyans Bhansali
+	email = shreyans@venmo.com
+[alias]
+	st=status
+	ci=commit
+	co=checkout
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	up=pull --rebase
+[color]
+	ui = auto

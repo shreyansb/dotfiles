@@ -1,0 +1,2 @@
+--ignore-dir=htmlcov
+--type-add=html=.mustache
