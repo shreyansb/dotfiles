@@ -1,4 +1,6 @@
 " ---- Shreyans Bhansali ----
+call pathogen#runtime_append_all_bundles() 
+call pathogen#helptags()
 
 " ---- General settings -----
 " Some taken from: http://amix.dk/vim/vimrc.html
@@ -50,8 +52,6 @@ let g:miniBufExplModSelTarget = 1
 autocmd! bufwritepost vimrc source ~/.vimrc	"reload vimrc when it is updated
 
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-
-call pathogen#runtime_append_all_bundles() 
 
 let g:commandTMaxHeight=10
 

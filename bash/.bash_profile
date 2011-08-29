@@ -23,10 +23,12 @@ parse_git_branch() {
 # ---- command prompt ----
 # for all directories higher in the tree than the current directory,
 # only show the first character of their name
-PROMPT_COMMAND='CurDir=`pwd|sed -e "s!$HOME!~!"|sed -E "s!([^/])[^/]+/!\1/!g"`'
-#PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
+#PROMPT_COMMAND='CurDir=`pwd|sed -e "s!$HOME!~!"|sed -E "s!([^/])[^/]+/!\1/!g"`'
+PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
 # [user@host /c/directory (git_branch*)]$ 
-PS1='[\u@\h \[\e[2;32m\]$CurDir\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
+#PS1='[\u@\h \[\e[2;32m\]$CurDir\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
+# [user@host /current/directory (git_branch*)]$ 
+PS1='[\u@\h \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
 
 # ---- aliases ----
 if [ -f ~/.bash_venmo_settings ]; then
@@ -34,6 +36,9 @@ if [ -f ~/.bash_venmo_settings ]; then
 fi
 if [ -f ~/.bash_personal_settings ]; then
     source ~/.bash_personal_settings
+fi
+if [ -f ~/venmo-devops/.venmo_host_aliases ]; then
+    source ~/venmo-devops/.venmo_host_aliases
 fi
 
 alias aliases="alias -p"	# prints list of all aliases
