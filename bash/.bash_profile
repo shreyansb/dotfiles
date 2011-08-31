@@ -8,6 +8,11 @@ export TERM='xterm-color'
 export CLICOLOR=1
 export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+	. `brew --prefix`/etc/bash_completion
+fi
+
+
 # ---- git branch name and status for prompt ----
 if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
 	source /usr/local/git/contrib/completion/git-completion.bash
