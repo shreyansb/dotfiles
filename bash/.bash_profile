@@ -8,6 +8,21 @@ export TERM='xterm-color'
 export CLICOLOR=1
 export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 
+# ---- machine and project specific settings ----
+if [ -f ~/.bash_venmo_settings ]; then
+    source ~/.bash_venmo_settings
+fi
+if [ -f ~/.bash_personal_settings ]; then
+    source ~/.bash_personal_settings
+fi
+if [ -f ~/venmo-devops/.venmo_host_aliases ]; then
+    source ~/venmo-devops/.venmo_host_aliases
+fi
+
+if [ ! -n "$HOSTNAME_FRIENDLY" ]; then
+	export HOSTNAME_FRIENDLY=$HOSTNAME
+fi
+
 if which brew > /dev/null; then
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		. `brew --prefix`/etc/bash_completion
@@ -35,18 +50,9 @@ PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
 # [user@host /c/directory (git_branch*)]$ 
 #PS1='[\u@\h \[\e[2;32m\]$CurDir\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
 # [user@host /current/directory (git_branch*)]$ 
-PS1='[\u@\h \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
+PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
 
 # ---- aliases ----
-if [ -f ~/.bash_venmo_settings ]; then
-    source ~/.bash_venmo_settings
-fi
-if [ -f ~/.bash_personal_settings ]; then
-    source ~/.bash_personal_settings
-fi
-if [ -f ~/venmo-devops/.venmo_host_aliases ]; then
-    source ~/venmo-devops/.venmo_host_aliases
-fi
 
 alias aliases="alias -p"	# prints list of all aliases
 
