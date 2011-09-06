@@ -52,6 +52,9 @@ PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
 # [user@host /current/directory (git_branch*)]$ 
 PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
 
+# ---- random stuff ----
+set +H # doesnt expand exclamation marks in commit messages
+
 # ---- aliases ----
 
 alias aliases="alias -p"	# prints list of all aliases
