@@ -8,6 +8,11 @@ export TERM='xterm-color'
 export CLICOLOR=1
 export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 
+# --- python virtualenv ---
+if [ -d ~/py267/bin ]; then
+	export PATH=~/py267/bin:$PATH
+fi
+
 # ---- machine and project specific settings ----
 if [ -f ~/.bash_venmo_settings ]; then
     source ~/.bash_venmo_settings
