@@ -78,3 +78,6 @@ alias ackp="ack --type=python"
 alias ackj="ack --type=javascript"
 alias ackh="ack --type=html"
 alias acki="ack -i"
+
+alias untar="tar -zxvf"
+alias pyinstall="sudo python setup.py install"
