@@ -2,6 +2,8 @@
 
 export PATH=$PATH:~/bin
 export EDITOR=vim
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_RESPECT_VIRTUALENV=true
 
 # ---- color settings for ls ----
 export TERM='xterm-color'
@@ -9,9 +11,9 @@ export CLICOLOR=1
 export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 
 # --- python virtualenv ---
-if [ -d ~/py267/bin ]; then
-	export PATH=~/py267/bin:$PATH
-fi
+#if [ -d ~/py267/bin ]; then
+#	export PATH=~/py267/bin:$PATH
+#fi
 
 # ---- machine and project specific settings ----
 if [ -f ~/.bash_venmo_settings ]; then
