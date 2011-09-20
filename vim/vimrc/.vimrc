@@ -60,6 +60,8 @@ au BufRead,BufNewFile *.mustache set syntax=html autoindent tabstop=4 expandtab 
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
+"autocmd BufWritePost *.js JSLint
+
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class,#
@@ -85,10 +87,10 @@ nmap ,t <Leader>t
 
 "  The following four are for going to the next/prev function definition and
 "  next/prev class definition in python
-nmap df :?^\s.*def <cr>
-nmap fd :/^\s.*def <cr>
-nmap cv :?^class <cr>
-nmap vc :/^class <cr>
+"nmap df :?^\s.*def <cr>
+"nmap fd :/^\s.*def <cr>
+"nmap cv :?^class <cr>
+"nmap vc :/^class <cr>
 " copy to clipboard
 nmap ,a ggVG"*y
 
