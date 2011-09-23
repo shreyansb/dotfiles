@@ -21,7 +21,7 @@
 	rbc = rebase --continue
 	re = remote
 	st = status
-	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	up = pull --rebase
 [color]
 	ui=auto
