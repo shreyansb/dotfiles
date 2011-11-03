@@ -25,3 +25,6 @@
 	up = pull --rebase
 [color]
 	ui=auto
+[dude]
+	interval = 30
+	icon = /Users/shreyans/.git-dude/github_32.png

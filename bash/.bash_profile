@@ -9,6 +9,11 @@ export PIP_RESPECT_VIRTUALENV=true
 export TERM='xterm-color'
 export CLICOLOR=1
 export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
+txtblk='\033[0;30m'
+txtred='\033[1;31m'
+txtgrn='\033[1;32m'
+txtylw='\033[1;33m'
+end='\033[0m'
 
 # --- python virtualenv ---
 if [ -d ~/py267/bin ]; then
@@ -42,6 +47,33 @@ if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
 	source /usr/local/git/contrib/completion/git-completion.bash
 fi
 
+function parse_git {
+  branch="$(__git_ps1 "%s")"
+  if [[ -z $branch ]]; then
+    return
+  fi
+
+  status="$(git status 2>/dev/null)"
+
+  if [[ $status =~ "Untracked files" ]]; then
+    branch="${txtred}(${branch})${end}"
+  fi
+  if [[ $status =~ "Changes not staged for commit" ]]; then
+    branch="${txtred}(${branch})${end}"
+  fi
+  if [[ $status =~ "Changes to be committed" ]]; then
+    branch="${txtylw}(${branch})${end}"
+  fi
+  if [[ $status =~ "Your branch is ahead" ]]; then
+    branch="${txtylw}(${branch})${end}"
+  fi
+  if [[ $status =~ "nothing to commit" ]]; then
+    branch="${txtgrn}(${branch})${end}"
+  fi
+
+  echo -e $branch
+}
+
 parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
@@ -57,7 +89,8 @@ PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
 # [user@host /c/directory (git_branch*)]$ 
 #PS1='[\u@\h \[\e[2;32m\]$CurDir\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
 # [user@host /current/directory (git_branch*)]$ 
-PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
+#PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
+PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] $(parse_git)]\$ '
 
 # ---- random stuff ----
 #set +H # doesnt expand exclamation marks in commit messages
