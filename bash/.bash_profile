@@ -57,17 +57,13 @@ function parse_git {
 
   if [[ $status =~ "Untracked files" ]]; then
     branch="${txtred}(${branch})${end}"
-  fi
-  if [[ $status =~ "Changes not staged for commit" ]]; then
+  elif [[ $status =~ "Changes not staged for commit" ]]; then
     branch="${txtred}(${branch})${end}"
-  fi
-  if [[ $status =~ "Changes to be committed" ]]; then
+  elif [[ $status =~ "Changes to be committed" ]]; then
     branch="${txtylw}(${branch})${end}"
-  fi
-  if [[ $status =~ "Your branch is ahead" ]]; then
+  elif [[ $status =~ "Your branch is ahead" ]]; then
     branch="${txtylw}(${branch})${end}"
-  fi
-  if [[ $status =~ "nothing to commit" ]]; then
+  elif [[ $status =~ "nothing to commit" ]]; then
     branch="${txtgrn}(${branch})${end}"
   fi
 
