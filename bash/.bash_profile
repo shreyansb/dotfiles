@@ -20,6 +20,9 @@ if [ -d ~/py267/bin ]; then
 	export PATH=~/py267/bin:$PATH
 fi
 
+# ---- rvm ----
+[[ -s "/Users/shreyans/.rvm/scripts/rvm" ]] && source "/Users/shreyans/.rvm/scripts/rvm"
+
 # ---- machine and project specific settings ----
 if [ -f ~/.bash_venmo_settings ]; then
     source ~/.bash_venmo_settings
