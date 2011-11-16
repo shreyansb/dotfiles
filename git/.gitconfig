@@ -23,6 +23,7 @@
 	st = status
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	up = pull --rebase
+	master-rebase = "!git fetch origin master && git rebase master"
 [color]
 	ui=auto
 [dude]
