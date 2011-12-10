@@ -12,8 +12,8 @@ filetype indent on
 syntax on
 syntax enable
 
-colorscheme ir_black_shreyans
 set background=dark
+colorscheme ir_black_shreyans
 set t_Co=256
 set number		"show line numbers
 set history=700 	"number of lines of history for VIM to remember
