@@ -12,7 +12,7 @@ filetype indent on
 syntax on
 syntax enable
 
-colorscheme ir_black_kortina
+colorscheme ir_black_shreyans
 set background=dark
 set t_Co=256
 set number		"show line numbers
