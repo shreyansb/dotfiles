@@ -56,6 +56,7 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 let g:commandTMaxHeight=10
 
 " ---- Settings for specific language files ----
+autocmd BufReadPre venmo_tests.py :let b:did_pyflakes_plugin=1
 au BufRead,BufNewFile *.mustache set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
