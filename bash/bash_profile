@@ -39,6 +39,8 @@ if [ ! -n "$HOSTNAME_FRIENDLY" ]; then
 fi
 
 if which brew > /dev/null; then
+	export PATH=/usr/local/bin:$PATH
+
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		. `brew --prefix`/etc/bash_completion
 	fi
