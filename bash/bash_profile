@@ -1,6 +1,7 @@
 # --- Shreyans Bhansali ---
 
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/Dropbox/srbag/bin
 export EDITOR=vim
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
