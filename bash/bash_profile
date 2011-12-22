@@ -121,3 +121,6 @@ alias ackpylist="ack --nocolor '^\s*(class|def).*:' "
 
 alias untar="tar -zxvf"
 alias pyinstall="sudo python setup.py install"
+
+# this one's for you James!
+alias vi="vim"

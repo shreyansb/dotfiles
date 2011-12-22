@@ -108,6 +108,10 @@ nmap \v :e $MYVIMRC<CR>
 
 imap jj <Esc>
 
+" add a new line above or below the current one without entering insert mode
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
+
 "##################################################
 " via http://www.vim.org/scripts/script.php?script_id=30
 "##################################################
