@@ -13,8 +13,8 @@ syntax on
 syntax enable
 
 set background=dark
-colorscheme ir_black_shreyans
 set t_Co=256
+colorscheme ir_black_shreyans
 set number		"show line numbers
 set history=700 	"number of lines of history for VIM to remember
 set autoread		"auto update file if changed externally
