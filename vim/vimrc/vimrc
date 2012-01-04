@@ -65,7 +65,12 @@ autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class,#
+
+" turned off smartindent for python files in order to prevent
+" auto indenting of comments to the beginning of the line. based on: 
+" http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line
+"autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
+au! FileType python setl nosmartindent
 
 au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType javascript setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
