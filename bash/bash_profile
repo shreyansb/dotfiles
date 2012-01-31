@@ -19,6 +19,9 @@ end='\033[0m'
 # --- python virtualenv ---
 if [ -d ~/py267/bin ]; then
 	export PATH=~/py267/bin:$PATH
+	if [ -f ~/py267/bin/virtualenvwrapper.sh ]; then
+		source ~/py267/bin/virtualenvwrapper.sh
+	fi
 fi
 
 # ---- rvm ----
