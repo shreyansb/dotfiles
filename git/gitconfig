@@ -29,3 +29,6 @@
 [dude]
 	interval = 30
 	icon = /Users/shreyans/.git-dude/github_32.png
+[github]
+	user = shreyansb
+	token = 64d1102c63be6f62a8bfddb49ec74dac
