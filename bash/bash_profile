@@ -7,13 +7,16 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 
 # ---- color settings for ls ----
-export TERM='xterm-color'
-export CLICOLOR=1
-export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
+export TERM='xterm'
+#export TERM='xterm-color'
+#export CLICOLOR=1
+#export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 txtblk='\033[0;30m'
 txtred='\033[1;31m'
 txtgrn='\033[1;32m'
+solarizedlessgray='\033[1;36m'
 txtylw='\033[1;33m'
+solarizedtxtpurple='\033[1;35m'
 end='\033[0m'
 
 # --- python virtualenv ---
@@ -71,11 +74,11 @@ function parse_git {
   elif [[ $status =~ "Changes not staged for commit" ]]; then
     branch="${txtred}(${branch})${end}"
   elif [[ $status =~ "Changes to be committed" ]]; then
-    branch="${txtylw}(${branch})${end}"
+    branch="${solarizedtxtpurple}(${branch})${end}"
   elif [[ $status =~ "Your branch is ahead" ]]; then
-    branch="${txtylw}(${branch})${end}"
+    branch="${solarizedtxtpurple}(${branch})${end}"
   elif [[ $status =~ "nothing to commit" ]]; then
-    branch="${txtgrn}(${branch})${end}"
+    branch="${solarizedlessgray}(${branch})${end}"
   fi
 
   echo -e $branch
