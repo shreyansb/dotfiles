@@ -12,11 +12,10 @@ export TERM='xterm'
 #export CLICOLOR=1
 #export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 txtblk='\033[0;30m'
-txtred='\033[1;31m'
-txtgrn='\033[1;32m'
-solarizedlessgray='\033[1;36m'
-txtylw='\033[1;33m'
-solarizedtxtpurple='\033[1;35m'
+txtred='\033[31m'
+txtgrn='\033[32m'
+txtplain='\033[1m'
+txtylw='\033[33m'
 end='\033[0m'
 
 # --- python virtualenv ---
@@ -74,11 +73,11 @@ function parse_git {
   elif [[ $status =~ "Changes not staged for commit" ]]; then
     branch="${txtred}(${branch})${end}"
   elif [[ $status =~ "Changes to be committed" ]]; then
-    branch="${solarizedtxtpurple}(${branch})${end}"
+    branch="${txtylw}(${branch})${end}"
   elif [[ $status =~ "Your branch is ahead" ]]; then
-    branch="${solarizedtxtpurple}(${branch})${end}"
+    branch="${txtylw}(${branch})${end}"
   elif [[ $status =~ "nothing to commit" ]]; then
-    branch="${solarizedlessgray}(${branch})${end}"
+    branch="${txtplain}(${branch})${end}"
   fi
 
   echo -e $branch
@@ -100,7 +99,7 @@ PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
 #PS1='[\u@\h \[\e[2;32m\]$CurDir\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
 # [user@host /current/directory (git_branch*)]$ 
 #PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
-PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] $(parse_git)]\$ '
+PS1='[\u@$HOSTNAME_FRIENDLY \[\e[34m\]\w\[\e[m\] $(parse_git)]\$ '
 
 # ---- random stuff ----
 #set +H # doesnt expand exclamation marks in commit messages
