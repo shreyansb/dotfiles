@@ -127,7 +127,6 @@ alias ackpylisttest="ack --nocolor ^.*(class|def.test).*:.* model/venmo_tests.py
 
 alias untar="tar -zxvf"
 alias pyinstall="sudo python setup.py install"
-alias pt="ps -e -o pid,command | grep"
 
 # this one's for you James!
 alias vi="vim"
