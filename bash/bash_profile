@@ -59,6 +59,9 @@ GIT_PS1_SHOWSTASHSTATE=1
 if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
 	source /usr/local/git/contrib/completion/git-completion.bash
 fi
+if [ -f /opt/local/etc/bash_completion/git-completion.bash ]; then
+	source /opt/local/etc/bash_completion/git-completion.bash
+fi
 
 function parse_git {
   branch="$(__git_ps1 "%s")"
