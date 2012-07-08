@@ -6,3 +6,4 @@ ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/inputrc/inputrc ~/.inputrc
 ln -s ~/dotfiles/ack/ackrc ~/.ackrc
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/emacs.d ~/.emacs.d

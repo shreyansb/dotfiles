@@ -3,7 +3,7 @@
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/Dropbox/srbag/bin
 export EDITOR=vim
-export PIP_REQUIRE_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=false
 export PIP_RESPECT_VIRTUALENV=true
 
 # ---- color settings for ls ----
@@ -17,6 +17,11 @@ txtgrn='\033[32m'
 txtplain='\033[1m'
 txtylw='\033[33m'
 end='\033[0m'
+
+# --- user's binaries ---
+if [ -d ~/bin ]; then
+	export PATH=$PATH:~/bin
+fi
 
 # --- python virtualenv ---
 if [ -d ~/py267/bin ]; then
