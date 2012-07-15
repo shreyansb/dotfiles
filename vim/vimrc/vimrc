@@ -16,7 +16,7 @@ set background=dark
 "set background=light
 set t_Co=256
 "colorscheme ir_black_shreyans
-"let g:solarized_termcolors=256
+let g:solarized_contrast="high"
 colorscheme solarized
 set number		"show line numbers
 set history=700 	"number of lines of history for VIM to remember
@@ -62,34 +62,28 @@ let g:commandTMaxHeight=10
 autocmd BufReadPre venmo_tests.py :let b:did_pyflakes_plugin=1
 au BufRead,BufNewFile *.mustache set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
+""" Python
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-
-"autocmd BufWritePost *.js JSLint
-
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
-
-" turned off smartindent for python files in order to prevent
-" auto indenting of comments to the beginning of the line. based on: 
-" http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line
-"autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 au! FileType python setl nosmartindent
-
 au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set ft=python.django " For SnipMate
+let g:pydiction_location = '~/.vim/ftplugin/pydiction-1.2/complete-dict'
+
+""" front end stuff
 au FileType javascript setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType html setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType css setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType python setlocal list
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType python set ft=python.django " For SnipMate
 autocmd FileType html set ft=html.django_template " For SnipMate
 
-let g:pydiction_location = '~/.vim/ftplugin/pydiction-1.2/complete-dict'
-
+""" Go
+au BufNewFile,BufRead *.go set filetype=go
 
 " ---- key mappings ----
 nmap ,t <Leader>t
