@@ -133,6 +133,8 @@ alias acki="ack -i"
 alias ackpylist="ack --nocolor '^\s*(class|def).*:' "
 alias ackpylisttest="ack --nocolor ^.*(class|def.test).*:.* model/venmo_tests.py"
 
+alias gg="git grep -n --color --heading --break"
+
 alias untar="tar -zxvf"
 alias pyinstall="sudo python setup.py install"
 alias pt="ps -e -o pid,command | grep"

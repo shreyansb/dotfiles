@@ -72,6 +72,9 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set ft=python.django " For SnipMate
 let g:pydiction_location = '~/.vim/ftplugin/pydiction-1.2/complete-dict'
 
+"" Ruby
+au FileType ruby setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
 "" front end stuff
 au FileType javascript setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType html setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
