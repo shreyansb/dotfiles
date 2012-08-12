@@ -34,6 +34,9 @@ fi
 # ---- rvm ----
 [[ -s "/Users/shreyans/.rvm/scripts/rvm" ]] && source "/Users/shreyans/.rvm/scripts/rvm"
 
+# ---- go ----
+export GOROOT=/usr/local/go
+
 # ---- machine and project specific settings ----
 if [ -f ~/.bash_venmo_settings ]; then
     source ~/.bash_venmo_settings
