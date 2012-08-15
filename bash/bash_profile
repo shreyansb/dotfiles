@@ -36,6 +36,7 @@ fi
 
 # ---- go ----
 export GOROOT=/usr/local/go
+export GOPATH=~/lib/go
 
 # ---- machine and project specific settings ----
 if [ -f ~/.bash_venmo_settings ]; then
