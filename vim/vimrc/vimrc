@@ -87,6 +87,7 @@ autocmd FileType html set ft=html.django_template " For SnipMate
 
 "" Go
 au BufNewFile,BufRead *.go set filetype=go
+au FileType go setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 "" key mappings
 nmap ,t <Leader>t
