@@ -1,16 +1,10 @@
 # --- Shreyans Bhansali ---
 
-export PATH=$PATH:~/bin
 export PATH=$PATH:~/Dropbox/srbag/bin
 export EDITOR=vim
-export PIP_REQUIRE_VIRTUALENV=false
-export PIP_RESPECT_VIRTUALENV=true
 
 # ---- color settings for ls ----
 export TERM='xterm'
-#export TERM='xterm-color'
-#export CLICOLOR=1
-#export LSCOLORS='gxfxcxdxbxegedabagacad' # replace the dark blue for directories with a lighter color
 txtblk='\033[0;30m'
 txtred='\033[31m'
 txtgrn='\033[32m'
@@ -24,12 +18,11 @@ if [ -d ~/bin ]; then
 fi
 
 # --- python virtualenv ---
-if [ -d ~/py267/bin ]; then
-	export PATH=~/py267/bin:$PATH
-	if [ -f ~/py267/bin/virtualenvwrapper.sh ]; then
-		source ~/py267/bin/virtualenvwrapper.sh
-	fi
-fi
+
+export PIP_REQUIRE_VIRTUALENV=false
+export PIP_RESPECT_VIRTUALENV=true
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh 
 
 # ---- rvm ----
 [[ -s "/Users/shreyans/.rvm/scripts/rvm" ]] && source "/Users/shreyans/.rvm/scripts/rvm"
@@ -40,14 +33,8 @@ export GOPATH=~/lib/go
 export PATH=$GOROOT:$GOROOT/bin:$GOPATH:$GOPATH/bin:$PATH
 
 # ---- machine and project specific settings ----
-if [ -f ~/.bash_venmo_settings ]; then
-    source ~/.bash_venmo_settings
-fi
 if [ -f ~/.bash_personal_settings ]; then
     source ~/.bash_personal_settings
-fi
-if [ -f ~/venmo-devops/.venmo_host_aliases ]; then
-    source ~/venmo-devops/.venmo_host_aliases
 fi
 
 if [ ! -n "$HOSTNAME_FRIENDLY" ]; then
@@ -106,16 +93,8 @@ parse_git_branch() {
 # ---- command prompt ----
 # for all directories higher in the tree than the current directory,
 # only show the first character of their name
-#PROMPT_COMMAND='CurDir=`pwd|sed -e "s!$HOME!~!"|sed -E "s!([^/])[^/]+/!\1/!g"`'
 PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
-# [user@host /c/directory (git_branch*)]$ 
-#PS1='[\u@\h \[\e[2;32m\]$CurDir\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
-# [user@host /current/directory (git_branch*)]$ 
-#PS1='[\u@$HOSTNAME_FRIENDLY \[\e[2;32m\]\w\[\e[m\] \[\e[1;31m\]$(parse_git_branch)\[\e[m\]]\$ '
 PS1='[\u@$HOSTNAME_FRIENDLY \[\e[34m\]\w\[\e[m\] $(parse_git)]\$ '
-
-# ---- random stuff ----
-#set +H # doesnt expand exclamation marks in commit messages
 
 # ---- aliases ----
 
@@ -136,7 +115,6 @@ alias ackj="ack --type=javascript"
 alias ackh="ack --type=html"
 alias acki="ack -i"
 alias ackpylist="ack --nocolor '^\s*(class|def).*:' "
-alias ackpylisttest="ack --nocolor ^.*(class|def.test).*:.* model/venmo_tests.py"
 
 alias gg="git grep -n --color --heading --break"
 
