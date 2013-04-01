@@ -56,7 +56,9 @@ autocmd! bufwritepost vimrc source ~/.vimrc	"reload vimrc when it is updated
 
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
+"" command-t
 let g:commandTMaxHeight=10
+set wildignore+=*.pyc
 
 "" Settings for specific language files
 autocmd BufReadPre venmo_tests.py :let b:did_pyflakes_plugin=1
@@ -75,9 +77,14 @@ let g:pydiction_location = '~/.vim/ftplugin/pydiction-1.2/complete-dict'
 "" Ruby
 au FileType ruby setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
-"" front end stuff
+"" javascript
 au FileType javascript setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
+"" HTML
 au FileType html setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
+"" CSS
+au BufRead,BufNewFile *.scss set filetype=css
 au FileType css setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

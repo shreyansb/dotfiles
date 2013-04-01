@@ -18,7 +18,6 @@ if [ -d ~/bin ]; then
 fi
 
 # --- python virtualenv ---
-
 export PIP_REQUIRE_VIRTUALENV=false
 export PIP_RESPECT_VIRTUALENV=true
 export WORKON_HOME=~/Envs
@@ -35,6 +34,10 @@ export PATH=$GOROOT:$GOROOT/bin:$GOPATH:$GOPATH/bin:$PATH
 # ---- machine and project specific settings ----
 if [ -f ~/.bash_personal_settings ]; then
     source ~/.bash_personal_settings
+fi
+
+if [ -f ~/.bash_vespr_settings ]; then
+    source ~/.bash_vespr_settings
 fi
 
 if [ ! -n "$HOSTNAME_FRIENDLY" ]; then
@@ -94,7 +97,7 @@ parse_git_branch() {
 # for all directories higher in the tree than the current directory,
 # only show the first character of their name
 PROMPT_COMMAND="echo -ne \"\033]0;$1 ($USER)\007\""
-PS1='[\u@$HOSTNAME_FRIENDLY \[\e[34m\]\w\[\e[m\] $(parse_git)]\$ '
+PS1='[\u \[\e[34m\]\w\[\e[m\] $(parse_git)]\n--> '
 
 # ---- aliases ----
 
@@ -115,6 +118,8 @@ alias ackj="ack --type=javascript"
 alias ackh="ack --type=html"
 alias acki="ack -i"
 alias ackpylist="ack --nocolor '^\s*(class|def).*:' "
+
+alias pytree="tree | grep -v pyc | grep -v __init__"
 
 alias gg="git grep -n --color --heading --break"
 
