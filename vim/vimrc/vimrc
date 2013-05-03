@@ -9,6 +9,11 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" mouse
+set ttyfast
+set mouse=a
+set ttymouse=xterm2
+
 syntax on
 syntax enable
 
@@ -59,10 +64,11 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 "" command-t
 let g:commandTMaxHeight=10
 set wildignore+=*.pyc
+set wildignore+=node_modules
 
 "" Settings for specific language files
-autocmd BufReadPre venmo_tests.py :let b:did_pyflakes_plugin=1
 au BufRead,BufNewFile *.mustache set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.hbs set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 "" Python
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
