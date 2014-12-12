@@ -63,12 +63,10 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 "" command-t
 let g:commandTMaxHeight=10
-set wildignore+=*.pyc
+set wildignore+=*.pyc,static/snapshots/**,server/migrations/done,static/scripts/external/MathJax,_debug_toolbar
 set wildignore+=node_modules
 
 "" Settings for specific language files
-au BufRead,BufNewFile *.mustache set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
-au BufRead,BufNewFile *.hbs set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 "" Python
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
@@ -87,21 +85,24 @@ au FileType ruby setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType javascript setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 "" HTML
+au BufRead,BufNewFile *.mustache set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.hbs set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType html setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType htmldjango setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 "" CSS
 au BufRead,BufNewFile *.scss set filetype=css
 au FileType css setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set ft=html.django_template " For SnipMate
-
 "" Go
 au BufNewFile,BufRead *.go set filetype=go
 au FileType go setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 set rtp+=$GOROOT/misc/vim
+
+"" autocomplete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 "" key mappings
 nmap ,t <Leader>t

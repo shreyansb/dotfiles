@@ -1,5 +1,6 @@
 # --- Shreyans Bhansali ---
 
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 export PATH=$PATH:~/Dropbox/srbag/bin
 export EDITOR=vim
 export ACKRC=".ackrc"
@@ -31,6 +32,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 export GOROOT=/usr/local/go
 export GOPATH=~/lib/go
 export PATH=$GOROOT:$GOROOT/bin:$GOPATH:$GOPATH/bin:$PATH
+
+# ---- postgres.app ----
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 # ---- machine and project specific settings ----
 if [ -f ~/.bash_personal_settings ]; then
@@ -121,8 +125,10 @@ alias acki="ack -i"
 alias ackpylist="ack --nocolor '^\s*(class|def).*:' "
 
 alias pytree="tree | grep -v pyc | grep -v __init__"
+alias tree3="tree -L 3"
 
 alias gg="git grep -n --color --heading --break"
+alias gup='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch'
 
 alias untar="tar -zxvf"
 alias pyinstall="sudo python setup.py install"

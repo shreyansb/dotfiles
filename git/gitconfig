@@ -1,6 +1,6 @@
 [user]
 	name = Shreyans Bhansali
-	email = shreyans@venmo.com
+	email = shreyansb@gmail.com
 [core]
 	excludesfile = /Users/shreyans/.gitignore
 [rerere]
@@ -22,7 +22,7 @@
 	re = remote
 	st = status
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	up = pull --rebase
+	up = pull origin "git rev-parse --abbrev-ref HEAD"
 	master-rebase = "!git fetch origin master && git rebase master"
 [color]
 	ui=auto

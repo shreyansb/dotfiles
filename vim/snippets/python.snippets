@@ -1,4 +1,15 @@
 snippet pdb
 	import ipdb; ipdb.set_trace()
-snippet whichfun
-	from lib.utils import which_function_called_this_function; which_function_called_this_function()
+snippet loc
+	from util import vlog; vlog.pretty_log(locals())
+snippet migration
+	import sys
+	sys.path.append('/atom/server')
+
+	def main():	
+		""" """
+
+	if __name__ == "__main__":
+		print "START %s" % __file__
+		main()
+		print "END %s" % __file__
