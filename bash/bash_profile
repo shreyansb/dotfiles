@@ -2,6 +2,9 @@
 
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 export PATH=$PATH:~/Dropbox/srbag/bin
+export PATH=$PATH:/atom/bin/export
+export PATH=$PATH:~/Downloads/android-sdk-macosx/tools
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export EDITOR=vim
 export ACKRC=".ackrc"
 
@@ -26,12 +29,10 @@ export WORKON_HOME=~/Envs
 source /usr/local/bin/virtualenvwrapper.sh 
 
 # ---- rvm ----
-[[ -s "/Users/shreyans/.rvm/scripts/rvm" ]] && source "/Users/shreyans/.rvm/scripts/rvm"
 
 # ---- go ----
-export GOROOT=/usr/local/go
-export GOPATH=~/lib/go
-export PATH=$GOROOT:$GOROOT/bin:$GOPATH:$GOPATH/bin:$PATH
+export GOPATH=/socratic/golang
+export PATH=$PATH:$GOPATH/bin
 
 # ---- postgres.app ----
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
@@ -56,7 +57,6 @@ if which brew > /dev/null; then
 		. `brew --prefix`/etc/bash_completion
 	fi
 fi
-
 
 # ---- git branch name and status for prompt ----
 GIT_PS1_SHOWSTASHSTATE=1
@@ -136,3 +136,5 @@ alias pt="ps -e -o pid,command | grep"
 
 # this one's for you James!
 alias vi="vim"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
