@@ -1,0 +1,5 @@
+alias atom="workon atom && cd /atom"
+alias atomdev="workon atom && cd /atomdev"
+alias vup="cd /atomdev && vagrant up"
+alias vsh="cd /atomdev && vagrant ssh"
+alias vst="cd /atomdev && vagrant status"
