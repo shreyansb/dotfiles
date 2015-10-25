@@ -25,3 +25,6 @@
 [submodule "vim/bundle/gnupg"]
 	path = vim/bundle/gnupg
 	url = https://github.com/embear/vim-gnupg.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git@github.com:wincent/command-t.git
