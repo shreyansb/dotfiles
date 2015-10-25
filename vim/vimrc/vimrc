@@ -84,6 +84,10 @@ au FileType ruby setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 "" javascript
 au FileType javascript setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
+"" json
+au BufNewFile,BufRead *.json set filetype=json
+au FileType json setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
 "" HTML
 au BufRead,BufNewFile *.mustache set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.hbs set syntax=html autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
@@ -96,7 +100,7 @@ au FileType css setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 "" Go
 au BufNewFile,BufRead *.go set filetype=go
-au FileType go setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType go setl autoindent tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 set rtp+=$GOROOT/misc/vim
 
 "" autocomplete
